@@ -13,7 +13,6 @@ public class Task9_2 {
 
     public static void main(String[] args) {
         File file = new File(PATH);
-        File jsonfile = new File(ENDPATH);
         List<User> users = new ArrayList<>();
         readTextFromFile(users);
         checkFileAvaliable(file);

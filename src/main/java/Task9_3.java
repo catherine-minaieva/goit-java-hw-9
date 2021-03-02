@@ -14,20 +14,19 @@ public class Task9_3 {
             }
 
             String[] wordsToArray = wordsInLine.toString().split(" ");
-
-            Map<String, Integer> countedWords = new HashMap<>();
+            Map<String,Integer> wordsMap = new TreeMap<String,Integer>();
             for (String word : wordsToArray) {
-                Integer counter = countedWords.get(word);
+                Integer counter = wordsMap.get(word);
                 if (counter == null) {
                     counter = 0;
                 }
-                countedWords.put(word, counter + 1);
+                wordsMap.put(word, counter + 1);
             }
 
-            Set<String> listOfWords = countedWords.keySet();
-            for (String key : listOfWords) {
-                System.out.println(key + " " + countedWords.get(key));
-            }
+            wordsMap.entrySet().stream()
+                    .sorted(Map.Entry.<String, Integer>comparingByValue().reversed())
+                    .forEach(System.out::println);
+
         } catch (IOException e) {
             System.err.println(e.getMessage());
         }

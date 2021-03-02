@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.regex.Pattern;
 
 public class Task9_1 {
-    private static final String PATH = "D:\\GoitJAVA\\Модуль9\\src\\main\\resources\\file.txt";
+    private static final String PATH = "src/main/resources/file.txt";
 
     public static void main(String[] args) {
         File file = new File(PATH);
